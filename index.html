@@ -2,288 +2,343 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sudip Tiwari - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sudip Tiwari | PhD Student, Computing and Information Science, RIT</title>
+    <meta name="description" content="Sudip Tiwari is a PhD student in Computing and Information Science at the Rochester Institute of Technology, working on knowledge distillation and large language models. Research interests: machine learning and AI, especially computer vision, LLMs and knowledge distillation.">
+    <meta name="author" content="Sudip Tiwari">
+    <meta name="theme-color" content="#F6F7FB">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sudip Tiwari">
+    <meta property="og:description" content="PhD student in Computing and Information Science at RIT. Knowledge distillation, large language models and computer vision.">
+    <meta property="og:url" content="https://sudiptiwari.github.io/">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101B34'/%3E%3Cpath d='M14 14h8M14 14v8M50 14h-8M50 14v8M14 50h8M14 50v-8M50 50h-8M50 50v-8' stroke='%23F0A800' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
+
+    <!-- Set the theme before first paint to avoid a flash -->
+    <script>
+        (function () {
+            var theme = 'light';
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved === 'light' || saved === 'dark') theme = saved;
+                else if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+            } catch (e) {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sudip Tiwari",
+        "jobTitle": "PhD Student",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "Rochester Institute of Technology" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Tribhuvan University, Pulchowk Campus" },
+        "url": "https://sudiptiwari.github.io/",
+        "knowsAbout": ["Machine Learning", "Artificial Intelligence", "Computer Vision", "Large Language Models", "Knowledge Distillation"],
+        "sameAs": ["https://github.com/sudiptiwari", "https://linkedin.com/in/sudiptiwari"]
+    }
+    </script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="container">
-            <h1 class="logo"><a href="#home">Sudip Tiwari</a></h1>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#interests">Interests</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="progress" id="progress" aria-hidden="true"></div>
 
-    <!-- Header Section -->
-    <header id="home">
-        <div class="container header-container">
-            <!-- <h2>Welcome to My Portfolio</h2> -->
-            <p>Computer Engineering Undergraduate | Machine Learning Enthusiast</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+    <header class="site-header" id="site-header">
+        <div class="bar">
+            <a class="wordmark" href="#top" aria-label="Sudip Tiwari, back to top">Sudip Tiwari</a>
+
+            <nav class="nav" id="nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#background">Background</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="bar-actions">
+                <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+                    <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
+                    <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                </button>
+                <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 8h16"/><path class="l2" d="M4 16h16"/></svg>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p style="width: 80%; margin: 0 auto; text-align: justify;">
-                I am an undergraduate student pursuing Computer Engineering at the Department of Electronics and Computer Engineering, Pulchowk Campus, Institute of Engineering, Tribhuvan University, Nepal. My primary areas of interest include Artificial Intelligence, Machine Learning, Mathematics, and Computational Problem Solving. Outside of academics, I enjoy hiking, traveling, and staying active by watching and playing sports.
-<br>
-Currently, I am working on a Computer Vision Project focused on Optical Character Recognition (OCR) for Devanagari (Nepali) Handwritten Characters. This involves building a dataset and developing a model tailored to this low-resource language. Through this project, I aim to address key challenges in the field of AI for underserved languages.
-<br>
-I aspire to become a researcher in the AI/ML field, with a particular focus on Computer Vision and Robotics. My technical expertise includes a strong foundation in Python and C++, along with hands-on experience using advanced AI libraries such as PyTorch and TensorFlow.
-<br>
-My life motto is, "The only competition I have is Yesterday's Me," which reflects my commitment to continuous self-improvement and personal growth in both my academic and professional pursuits.
-            </p>
-        </div>
-    </section>
+    <main id="main">
+        <!-- ============ Hero ============ -->
+        <section class="hero" id="top">
+            <div class="wrap hero-inner">
+                <div class="hero-copy">
+                    <h1>Sudip Tiwari</h1>
+                    <p class="lead">PhD student in Computing and Information Science at the Rochester Institute of Technology.</p>
+                    <p class="advisors">Advised by Prof. Xumin Liu and Prof. Qi Yu.</p>
+                    <p class="bio">
+                        I currently work on knowledge distillation and large language models.
+                        My research interests lie in machine learning and artificial intelligence, especially computer vision, LLMs and knowledge distillation.
+                    </p>
+                    <p class="bio">
+                        Before my PhD, I worked on handwriting recognition for low-resource scripts.
+                    </p>
+                    <ul class="hero-links">
+                        <li><a class="btn btn-primary" href="#contact" data-mail>Email me</a></li>
+                        <li><a class="btn" href="https://github.com/sudiptiwari" rel="noopener">GitHub</a></li>
+                        <li><a class="btn" href="https://linkedin.com/in/sudiptiwari" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
+                <figure class="visual" id="carousel" role="group" aria-roledescription="carousel" aria-label="Photos of Sudip" tabindex="-1">
+                    <div class="portrait" id="portrait">
+                        <div class="slides">
+                            <div class="slide is-active" data-focus="8% 10% 14% 10%" data-tag="Kathmandu, 2026" aria-roledescription="slide" aria-label="1 of 2">
+                                <div class="portrait-fallback" aria-hidden="true">ST</div>
+                                <img src="images/sudip-1.jpeg" alt="Sudip at a cafe in Kathmandu" width="800" height="1000" decoding="async">
+                            </div>
+                            <div class="slide" data-focus="10% 8% 12% 8%" data-tag="Langtang, 2025" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true">
+                                <div class="portrait-fallback" aria-hidden="true">ST</div>
+                                <img src="images/sudip-2.jpeg" alt="Sudip in the Langtang region of the Himalayas" width="800" height="1000" decoding="async">
+                            </div>
+                        </div>
+                        <div class="focus" id="focus" aria-hidden="true">
+                            <span class="focus-tag" id="focus-tag">Kathmandu, 2026</span>
+                        </div>
+                    </div>
 
-            <div class="experience-item">
-                <h3>ML Intern at Alternative Technology</h3>
-                <span>September 2022 - September 2023 | Kathmandu, Nepal</span>
-                <ul>
-                    <li>Led a team of interns experimenting with Super-Resolution Algorithms for better quality carpet images.</li>
-                </ul>
+                    <figcaption class="carousel-caption">
+                        <div class="captions" id="captions">
+                            <p class="caption-item is-active">A young Sudip at a caf&eacute; in Kathmandu, circa 2026.</p>
+                            <p class="caption-item" aria-hidden="true">An adventurer Sudip in the Langtang region of the Himalayas, Nepal, circa 2025.</p>
+                        </div>
+                        <div class="carousel-ctl">
+                            <div class="dots">
+                                <button class="dot" type="button" aria-label="Show photo 1" aria-current="true"></button>
+                                <button class="dot" type="button" aria-label="Show photo 2"></button>
+                            </div>
+                            <div class="arrows">
+                                <button class="round-btn" id="car-prev" type="button" aria-label="Previous photo">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+                                </button>
+                                <button class="round-btn" id="car-next" type="button" aria-label="Next photo">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </figcaption>
+                </figure>
             </div>
+        </section>
 
-            <div class="experience-item">
-                <h3>HackADev Winner</h3>
-                <span>June 2023 | UNDP, Citra Labs, Diyo.AI, NAAMII</span>
-                <ul>
-                    <li>Presented and developed the winning idea about a Legal Chatbot that can solve one's legal queries.</li>
-                </ul>
+        <!-- ============ News ============ -->
+        <section class="section" id="news" aria-labelledby="news-h">
+            <div class="wrap section-grid">
+                <h2 id="news-h">News</h2>
+                <ol class="news">
+                    <li>
+                        <span class="when">Fall 2026</span>
+                        <p>Started my PhD in Computing and Information Science at RIT, advised by Prof. Xumin Liu and Prof. Qi Yu.</p>
+                    </li>
+                    <li>
+                        <span class="when">2026</span>
+                        <p>Our paper on handwritten Devanagari conjunct consonants was accepted at the 17th IAPR International Workshop on Document Analysis Systems (DAS 2026).</p>
+                    </li>
+                    <li>
+                        <span class="when">2025</span>
+                        <p>Graduated with a BE in Computer Engineering from Pulchowk Campus. My thesis received the department's Best Final Year Project Award, chosen from 32 theses.</p>
+                    </li>
+                </ol>
             </div>
+        </section>
 
-            <div class="experience-item">
-                <h3>Evidence Based Approach (EBA), Minamata</h3>
-                <span>July - August 2023 | Keio University, Japan</span>
-                <ul>
-                    <li>Represented Tribhuvan University, Nepal in EBA, Minamata—a 10-day research and fieldwork on Data Collection, Data Analysis, Design, and Deriving Conclusions based on data.</li>
-                </ul>
+        <!-- ============ Publications ============ -->
+        <section class="section" id="publications" aria-labelledby="pub-h">
+            <div class="wrap section-grid">
+                <h2 id="pub-h">Publications</h2>
+                <div class="content">
+                    <article class="pub">
+                        <h3>Handwritten Devanagari Character Recognition: Conjunct Consonants Dataset Creation and Benchmarking with Transfer Learning</h3>
+                        <p class="authors"><strong>S. Tiwari</strong>, S. Khadka, S. Baral, S. P. Panday</p>
+                        <p class="venue"><span class="status">Accepted</span> 17th IAPR International Workshop on Document Analysis Systems, 2026</p>
+                        <p>A new benchmark of 50,020 labeled handwritten conjunct consonants, with transfer learning baselines that reach 99.57% on DHCD, above the previous 99%.</p>
+                        <p class="links"><a href="https://github.com/sudiptiwari/Handwritten-Devanagari-Conjunct-Consonant-Characters" rel="noopener">Code and dataset</a></p>
+                    </article>
+
+                    <article class="pub">
+                        <h3>Character Recognition of Nepali Number Plate</h3>
+                        <p class="authors">S. Khadka, S. Baral, <strong>S. Tiwari</strong>, S. K. Ghimire</p>
+                        <p class="venue">Information Systems for Intelligent Systems, Springer</p>
+                        <p>A two-stage system for Nepali license plates. YOLOv8 extracts the plate and detects characters, then a CNN recognizes each one.</p>
+                        <p class="links">
+                            <a href="https://doi.org/10.1007/978-3-032-12996-3_21" rel="noopener">Paper</a>
+                            <a href="https://github.com/sudiptiwari/Nepali-NumberPlate-Character-Recognition" rel="noopener">Code</a>
+                        </p>
+                    </article>
+                </div>
             </div>
-	    
-	    <div class="experience-item">
-                <h3>Teaching Experience</h3>
-                <span>2023, 2024 | IT Club Pulchowk Campus, LOCUS Pulchowk Campus</span>
-                <ul>
-                    <li>Involved in teaching at Software Fellowship under LOCUS, Pulchowk Campus which involved teaching foundational concepts of Data Science, AI and ML- Exploratory Data Analysis, Linear Regression, Logistic Regression and Introduction to Neural Networks and Deep Learning</li>
-    		    <li>Involved in teaching at Advanced C Concepts Course under IT Club, Pulchowk Campus which involved teaching CPU Architecture, Endianness, Bitfields, Padding, Structure Alignment & Padding and Structure Bitfields</li>
-                </ul>
+        </section>
+
+        <!-- ============ Projects ============ -->
+        <section class="section" id="projects" aria-labelledby="proj-h">
+            <div class="wrap section-grid">
+                <h2 id="proj-h">Selected projects</h2>
+                <div class="content">
+                    <ul class="project-list">
+                        <li>
+                            <h3><a href="https://github.com/sudiptiwari/gpt-2-from-scratch" rel="noopener">GPT-2 from scratch</a></h3>
+                            <p>A GPT-2 model built from the ground up and trained on the Tiny Shakespeare dataset.</p>
+                            <p class="tags">Transformers, language modeling</p>
+                            <svg class="ext" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                        </li>
+                        <li>
+                            <h3><a href="https://github.com/sudiptiwari/Niti" rel="noopener">Niti, a legal question answering chatbot</a></h3>
+                            <p>Semantic search over legal texts so people can ask legal questions in plain language. Winner of HackADev 2023, organized by UNDP, Citra Labs, Diyo.AI and NAAMII.</p>
+                            <p class="tags">NLP, semantic search</p>
+                            <svg class="ext" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                        </li>
+                        <li>
+                            <h3><a href="https://github.com/sudiptiwari/diabetes-readmission-prediction" rel="noopener">Diabetes readmission prediction</a></h3>
+                            <p>Random forest and logistic regression models that predict 30-day readmission for diabetic patients (AUC 0.7036), with a fairness evaluation across age, race and gender subgroups.</p>
+                            <p class="tags">Machine learning, fairness</p>
+                            <svg class="ext" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                        </li>
+                        <li>
+                            <h3><a href="https://github.com/sudiptiwari/nepali-auto-completion-tool" rel="noopener">Nepali language auto-completion</a></h3>
+                            <p>An LSTM-based next-word suggestion tool for Nepali, trained on a public corpus.</p>
+                            <p class="tags">LSTM, Nepali NLP</p>
+                            <svg class="ext" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                        </li>
+                        <li>
+                            <h3><a href="https://github.com/sudiptiwari/skin_cancer-classification-on-ISIC-dataset-using-transfer-learning" rel="noopener">Skin cancer classification on ISIC</a></h3>
+                            <p>Transfer learning for skin lesion classification on the ISIC dataset.</p>
+                            <p class="tags">PyTorch, medical imaging</p>
+                            <svg class="ext" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                        </li>
+                        <li>
+                            <h3><a href="https://github.com/sudiptiwari/support-vector-machine-from-scratch" rel="noopener">Support vector machine from scratch</a></h3>
+                            <p>A NumPy implementation on the Iris dataset, written as a guide to the mathematics and optimization behind SVMs.</p>
+                            <p class="tags">NumPy, optimization</p>
+                            <svg class="ext" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                        </li>
+                    </ul>
+                    <p class="more"><a href="https://github.com/sudiptiwari?tab=repositories" rel="noopener">See all repositories on GitHub</a></p>
+                </div>
             </div>
+        </section>
 
-	    
-	    <div class="experience-item">
-                <h3>Executive Head</h3>
-                <span>July 2020 - July 2022 | Mathematics Initiatives in Nepal</span>
-                <ul>
-                    <li>Pioneered and led an Educational Project, Education To All(ETA), in Pranavandana Ashram, an orphanage, which aimed to provide underprivileged students with mathematical, technical knowledge and career counseling</li>
-    		    <li>Organized National Mathematics Olympiad, selection round for IMO(International Mathematics Olympiad) participants from Nepal, in association with Mathematics Association of Nepal</li>
-                </ul>
+        <!-- ============ Background ============ -->
+        <section class="section" id="background" aria-labelledby="bg-h">
+            <div class="wrap section-grid">
+                <h2 id="bg-h">Background</h2>
+                <div class="content">
+                    <h3 class="group">Education</h3>
+                    <div class="entry">
+                        <p class="when">2026 to present</p>
+                        <div>
+                            <p class="role">PhD, Computing and Information Science</p>
+                            <p class="org">Rochester Institute of Technology, USA</p>
+                            <p>Advised by Prof. Xumin Liu and Prof. Qi Yu.</p>
+                        </div>
+                    </div>
+                    <div class="entry">
+                        <p class="when">2021 to 2025</p>
+                        <div>
+                            <p class="role">BE, Computer Engineering</p>
+                            <p class="org">Pulchowk Campus, IOE, Tribhuvan University, Nepal</p>
+                            <p>Graduated with 85.63%. Received the government merit scholarship for all four years, awarded for ranking 27th among 15,000 applicants.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="group">Experience</h3>
+                    <div class="entry">
+                        <p class="when">2023 to 2024</p>
+                        <div>
+                            <p class="role">Instructor</p>
+                            <p class="org">LOCUS and IT Club, Pulchowk Campus</p>
+                            <p>Taught data science and machine learning fundamentals in the Software Fellowship, and CPU architecture and low-level C in the Advanced C course.</p>
+                        </div>
+                    </div>
+                    <div class="entry">
+                        <p class="when">2022 to 2023</p>
+                        <div>
+                            <p class="role">Machine learning intern</p>
+                            <p class="org">Alternative Technology, Kathmandu</p>
+                            <p>Led a team of interns testing super-resolution algorithms to improve carpet image quality.</p>
+                        </div>
+                    </div>
+                    <div class="entry">
+                        <p class="when">2020 to 2022</p>
+                        <div>
+                            <p class="role">Executive head</p>
+                            <p class="org">Mathematics Initiatives in Nepal</p>
+                            <p>Started Education To All, a program offering math, technical skills and career counseling at an orphanage. Organized the National Mathematics Olympiad, the selection round for Nepal's IMO team.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="group">Honors</h3>
+                    <div class="entry">
+                        <p class="when">2025</p>
+                        <div><p class="role">Best Final Year Project Award</p><p>Selected from 32 theses across the department.</p></div>
+                    </div>
+                    <div class="entry">
+                        <p class="when">2023</p>
+                        <div><p class="role">HackADev winner</p><p>Presented and built Niti, the winning legal chatbot idea.</p></div>
+                    </div>
+                    <div class="entry">
+                        <p class="when">2023</p>
+                        <div><p class="role">Evidence Based Approach, Minamata</p><p>Represented Tribhuvan University in a 10-day research and fieldwork program hosted by Keio University, Japan.</p></div>
+                    </div>
+                    <div class="entry">
+                        <p class="when">2018 to 2021</p>
+                        <div><p class="role">Mahatma Gandhi Scholarship Scheme</p><p>Awarded by the Embassy of India for high school studies.</p></div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-	    <div class="experience-item">
-                <h3>Technical Volunteer</h3>
-                <span>October 2023 - February 2024 | Hult Prize at IoE, Pulchowk Campus</span>
-                <ul>
-                    <li>Engaged in technical endeavors, including script development for automating diverse tasks such as personalized mass email communication with sponsors and individualized certificate distribution to participants</li>
-    		    <li>Contributed to technical responsibilities during both online and in-person sessions of the Hult Prize</li>
-                </ul>
+        <!-- ============ Contact ============ -->
+        <section class="section" id="contact" aria-labelledby="contact-h">
+            <div class="wrap section-grid">
+                <h2 id="contact-h">Contact</h2>
+                <div class="content">
+                    <p class="contact-lead">I'm happy to talk about research and collaborations, especially on knowledge distillation and LLMs.</p>
+                    <p class="email" id="email-text">st7013 at rit dot edu</p>
+                    <div class="email-actions">
+                        <button class="btn btn-primary" type="button" data-mail>Write an email</button>
+                        <button class="copy-btn" id="copy-email" type="button">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+                            <span>Copy address</span>
+                        </button>
+                    </div>
+                    <ul class="social">
+                        <li><a href="https://github.com/sudiptiwari" rel="noopener">GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/sudiptiwari" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                    <p class="where">Rochester, NY, USA</p>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <!-- Add more experience items similarly -->
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-
-            <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/Niti">Niti: AI Chatbot for Legal Assistance</a></h3>
-                <p>An AI-powered semantic search chatbot for legal questionnaires, developed as a product of HackADev in association with UNDP, Citra Labs, NAAMII, and Diyo.ai.</p>
-            </div>
-
-            <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/MNIST">Number Identification ML Model</a></h3>
-                <p>Machine Learning model using MNIST dataset and PyTorch library on Google Colaboratory.</p>
-            </div>
-
-            <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/MEDNIST">Medical Image Classification ML Model</a></h3>
-                <p>Machine Learning model using MEDNIST dataset and MONAI framework on Google Colaboratory.</p>
-            </div>
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/Satyasakhadka/nepali-auto-completion-tool">Nepali Language Auto Completion Tool</a></h3>
-                <p>LSTM-based Nepali Language Auto-Completion Tool utilizing publicly available <a href="https://nepberta.github.io/">dataset</a> by Sulav Timilsina and Milan Gautam and Binod Bhattarai, 2022.</p>
-            </div>
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/support-vector-machine-from-scratch">Support Vector Machine(SVM) from Scratch</a></h3>
-                <p>A beginner-friendly, from-scratch implementation of Support Vector Machines using NumPy, focused on the Iris dataset, serving as an educational guide for understanding SVM mathematics and optimization.</p>
-            </div>
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/Data-Science-Projects">Data Science Projects</a></h3>
-                <p>As part of the Samsung Innovation Campus' Applied Data Science course, I successfully completed several Data Science projects. The course provided an in-depth exploration of key Data Science concepts, as well as a solid foundation in Artificial Intelligence and Machine Learning methodologies.</p>
-            </div>
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/matrix-multiplication-optimization">Matrix Multiplication Optimization</a></h3>
-                <p>Implementation of Matrix multiplication optimization using Strassen's algorithm in Python and comparison with Naive Matrix Multiplication and in-built NumPy method.</p>
-            </div>
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/dijkstras_algorithm_visualizer_using_p5.js">Dijkstra's Algorithm Visualizer</a></h3>
-                <p>An academic project undertaken in the realm of Data Structures and Algorithms using p5.js library on JavaScript, illustrating proficiency in the field.</p>
-            </div>
-
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/mandelbrot-set-using-p5-js">Mandelbrot Set Plot</a></h3>
-                <p>Fun project showcasing Mandelbrot Set visualizations utilizing the p5.js JavaScript library, offering an engaging exploration of intricate fractal patterns and mathematical beauty.</p>
-            </div>
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/levenshtein-distance-in-prolog">Levenshtein Distance</a></h3>
-                <p>Implemented the Levenshtein Distance Algorithm in SWI Prolog as a personal project, showcasing proficiency in algorithmic problem-solving and programming.</p>
-            </div>
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/Utsav-Manandhar/baghchal">Baghchal Game</a></h3>
-                <p>Two players as well as single player strategic board game using Simple and Fast Multimedia Library(SFML) on C++.</p>
-            </div>
-
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/sudiptiwari/solarsystem">Solar System Visualizer</a></h3>
-                <p>A scholarly endeavor in the field of Computer Graphics, employing the OpenGL framework with the C programming language.</p>
-            </div>
-
-
-	    <div class="project-item">
-                <h3><a href="https://github.com/SusheelThapa/Tic-Tak-Toe">Tic Tac Toe</a></h3>
-                <p>Algorithm design for Tic Tac Toe game on C Programming Language.</p>
-            </div>
-
-
-            <!-- Add more project items similarly -->
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li><strong>Programming Languages:</strong> Python, C, C++, JavaScript, PROLOG</li>
-                <li><strong>Libraries:</strong> PyTorch, TensorFlow, MONAI, OpenGL, p5.js</li>
-                <li><strong>Operating Systems:</strong> Linux, Windows</li>
-                <li><strong>Project Management:</strong> Git, GitHub</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-
-            <div class="education-item">
-                <h3>BE, Computer Engineering</h3>
-                <span>Expected 2025 | Pulchowk Campus, IOE, Tribhuvan University</span>
-                <ul>
-                    <li>Received the Government's full scholarship for a four-year course.</li>
-                    <li>Managing the class schedule as Class Representative.</li>
-                </ul>
-                <p><strong>Relevant Coursework:</strong> Artificial Intelligence, Applied Data Science, Data Structures and Algorithms, Software Engineering, etc.</p>
-            </div>
-
-            <div class="education-item">
-                <h3>High School</h3>
-                <span>2018 - 2021 | St. Xavier's College</span>
-                <ul>
-                    <li>Studied in Mathematics group, secured 3.75 CGPA.</li>
-                    <li>Class Representative responsible for class management and leading volunteering activities like Rural Immersion Camp.</li>
-                    <li>Vice President of Mathematics Club responsible for organizing the Nation-wide Maths Hunt competition.</li>
-                </ul>
-            </div>
-
-            <!-- Add more education items if necessary -->
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications">
-        <div class="container">
-            <h2>Certifications</h2>
-            <ul class="certifications-list">
-                <li><a href="https://drive.google.com/file/d/1bQSOTK8pyzI_hu1igSB-pfFVuVJRovH8/view?usp=drive_link">4th Annual Nepal AI School, 2023 by NAAMII</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/certificate/5WMAWW7L75SQ">Programming for Everybody (Getting Started with Python) on Coursera</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/certificate/QVRKKKSSHUKE">Supervised Machine Learning: Regression and Classification on Coursera</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements">
-        <div class="container">
-            <h2>Achievements & Honors</h2>
-            <div class="achievement-item">
-                <h3>Mahatma Gandhi Scholarship Scheme</h3>
-                <span>2018 - 2021</span>
-                <ul>
-                    <li>Recipient of Mahatma Gandhi Scholarship Scheme for high school studies awarded by the Embassy of India, GOI.</li>
-                </ul>
-            </div>
-            <!-- Add more achievements if any -->
-        </div>
-    </section>
-
-    <!-- Interests Section -->
-    <section id="interests">
-        <div class="container">
-            <h2>Interests</h2>
-            <p>Problem Solving, Competitive Programming, Machine Learning, Learning Mathematical and Computational concepts, Reading books, Travelling, Photography.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:077bct085.sudip@pcampus.edu.np" style="color: #FF5733">077bct085.sudip@pcampus.edu.np</a></p>
-            <p>Location: Kathmandu, Nepal</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/sudiptiwari">LinkedIn</a>
-                <a href="https://github.com/sudiptiwari">GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Sudip Tiwari. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="wrap foot">
+            <p>&copy; 2026 Sudip Tiwari</p>
+            <p><a href="#top">Back to top</a></p>
         </div>
     </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>
